@@ -4,7 +4,7 @@ import {
 } from "react-bootstrap";
 import { ACCESS_TOKEN_NAME } from "../../constants/apiConstants";
 import API from "../../utils/API";
-import { useAuth } from "../AuthContext";
+import { useAuth } from "../../contexts/AuthContext";
 import InviteButton from "../InviteButton";
 
 // This component shows a button where it is placed. When clicked, it opens a modal.
@@ -106,7 +106,7 @@ function UserSettingsComponent() {
       </Button>
 
       {/* This is the User settings form on the modal. */}
-      <Modal show={show} onHide={handleClose}>
+      <Modal className="pageModal" show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Adjust User Details</Modal.Title>
         </Modal.Header>

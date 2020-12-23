@@ -5,6 +5,7 @@ const { Schema } = mongoose;
 const recipeSchema = new Schema({
   title: { type: String, required: true },
   description: { type: String },
+  src: { type: String },
   instructions: [
     {
       item: String,
@@ -20,7 +21,7 @@ const recipeSchema = new Schema({
   ],
   prepTime: { type: Number },
   cookTime: { type: Number },
-  photo: {},
+  photo: { type: String },
   author: { type: Schema.Types.ObjectId, ref: "User", required: true },
   archived: { type: Boolean, required: true, default: false },
 }, { toJSON: { virtuals: true } });
